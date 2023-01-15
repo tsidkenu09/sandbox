@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>generate.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+generate.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">cohere</span>
+<span class="s1">API_KEY = </span><span class="s2">'6jUYKgdkz8hbZreCfmSv2FceKhyFiHuw0FNa9wEX'  </span><span class="s3"># sid API key</span>
+<span class="s1">co = cohere.Client(API_KEY)</span>
+
+<span class="s1">prompt = </span><span class="s2">f&quot;&quot;&quot;  </span>
+<span class="s2">Question Type: &quot;&quot;&quot;</span>
+
+
+<span class="s0">class </span><span class="s1">generate:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">prompt):</span>
+        <span class="s1">self.co = cohere.Client(API_KEY)</span>
+        <span class="s1">self.prompt = prompt</span>
+
+    <span class="s0">def </span><span class="s1">generate(self</span><span class="s0">, </span><span class="s1">questionType</span><span class="s0">, </span><span class="s1">questionAge</span><span class="s0">, </span><span class="s1">input): </span><span class="s3"># in main i will get this from classify</span>
+        <span class="s1">prompt = self.prompt + questionType + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Age: &quot; </span><span class="s1">+ questionAge + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Question: &quot; </span><span class="s1">+ input + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Response: &quot;</span>
+        <span class="s1">theResponse = co.generate(</span>
+            <span class="s1">model=</span><span class="s2">'4e436ad9-0c61-4af4-9ecf-237a6d9fcb96-ft'</span><span class="s0">,</span>
+            <span class="s1">prompt=prompt</span><span class="s0">,</span>
+            <span class="s1">max_tokens=</span><span class="s4">50</span><span class="s0">,</span>
+            <span class="s1">temperature=</span><span class="s4">0.6</span><span class="s0">,</span>
+            <span class="s1">k = </span><span class="s4">10</span><span class="s0">,</span>
+            <span class="s1">p = </span><span class="s4">1</span><span class="s0">,</span>
+            <span class="s1">frequency_penalty=</span><span class="s4">0.94</span><span class="s0">, </span><span class="s1">)</span>
+
+        <span class="s1">print(theResponse.generations[</span><span class="s4">0</span><span class="s1">].text)</span>
+
+
+
+</pre>
+</body>
+</html>

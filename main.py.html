@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">classify </span><span class="s0">import </span><span class="s1">*</span>
+<span class="s0">from </span><span class="s1">generate </span><span class="s0">import </span><span class="s1">*</span>
+<span class="s0">import </span><span class="s1">cohere</span>
+
+<span class="s1">API_KEY = </span><span class="s2">'6jUYKgdkz8hbZreCfmSv2FceKhyFiHuw0FNa9wEX'  </span><span class="s3"># sid API key</span>
+<span class="s1">co = cohere.Client(API_KEY)</span>
+
+<span class="s1">prompt = </span><span class="s2">f&quot;&quot;&quot;   </span>
+<span class="s2">Question Type: &quot;&quot;&quot;</span>
+
+<span class="s1">classifier = classify()  </span><span class="s3"># classifier object</span>
+<span class="s1">generator = generate(prompt)  </span><span class="s3"># generator object</span>
+
+<span class="s3">#SHOWS ON WEBSITE</span>
+<span class="s1">theIntro = input(</span><span class="s2">&quot;How old are you?&quot;</span><span class="s1">)</span>
+<span class="s1">theQuestion = input(</span><span class="s2">&quot;Enter your question or concern!&quot;</span><span class="s1">)</span>
+
+<span class="s1">questionAge = classifier.introduction(theIntro)  </span><span class="s3"># will be a string of either Child, Kid, Young Teen or Teen</span>
+<span class="s1">questionType = classifier.categorize(theQuestion)  </span><span class="s3"># will be a string of either Spiritual, Emotional, Physical, or Romantic</span>
+
+<span class="s3">#RETURN TO WEBSITE</span>
+<span class="s1">finale = generator.generate(questionType</span><span class="s0">, </span><span class="s1">questionAge</span><span class="s0">, </span><span class="s1">theQuestion)</span>
+
+
+
+
+
+</pre>
+</body>
+</html>

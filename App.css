@@ -1,0 +1,114 @@
+#root {
+  max-width: 2560px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.root {
+  color: #213547;
+  background-color: #F8ECBB;
+
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 4px 4px 4px #d38e31
+  
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.start-Button {
+  width: 300px;
+  height: 50px;
+  top: 10px;
+  font-family: "Sofia", sans-serif;
+  
+}
+
+.enter-Button{
+  position: absolute;
+  width:100px;
+  height: 30px;
+  right: 280px;
+  bottom: 100px;
+  font-family: "Sofia", sans-serif
+  
+}
+
+.sandbox-title{
+  position: absolute;
+  top: 10px;
+  left: 300;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 4px 4px 4px #d38e31
+
+}
+
+body{
+  background-color: #F8ECBB
+}
+h1 {
+  color: #992915;
+}
+
+.sandboxImage{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.subtitle{
+  font-family: 'Times New Roman', serif;
+}
+
+.palmImage{
+  position:absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.textBox {
+  position: absolute;
+  left: 480px;
+  bottom: 150px;
+
+}
+
+.display{
+  position: absolute;
+  left:480px;
+  bottom: 280px;
+
+}
+
